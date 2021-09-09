@@ -3,9 +3,11 @@ name: Shell commands
 on: [push]
 
 job: 
-  run-shell-command: 
+  build: 
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+
       - name: multiline script 
         run: | 
           echo "hello"
