@@ -1,0 +1,12 @@
+name: Shell commands 
+
+on: [push]
+
+job: 
+  run-shell-command: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: multiline script 
+        run: | 
+          echo "hello"
+          echo "test"
