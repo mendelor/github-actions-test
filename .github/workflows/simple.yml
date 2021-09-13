@@ -1,22 +1,15 @@
-name: Shell commands 
+name: Trigger Site Rebuild on a CRON Schedule
 
-on: 
+on:
   schedule:
-    - cron: '41 * * * *'
-
-jobs: 
-  run-shell-command: 
+    # Runs "at minute 50 past every hour" (see https://crontab.guru)
+    - cron: '50 * * * *'
+jobs:
+  build:
+    name: Trigger Site Rebuild
     runs-on: ubuntu-latest
     steps:
-      - name: Lists Files 
-        run: | 
-          pwd
-          ls -a
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "{{github.token}}" 
-      - name: Checkout 
-        uses: actions/checkout@v1
+      - name: cURL request
+         run: echo test
 
           
