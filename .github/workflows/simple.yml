@@ -6,7 +6,15 @@ jobs:
   run-shell-command: 
     runs-on: ubuntu-latest
     steps:
-      - name: multiline script 
+      - name: Lists Files 
         run: | 
-          npm -v
-          echo "test"
+          pwd
+          ls -a
+      - name: Checkout 
+        uses: actions/checkout@v1
+      - name: List Files After 
+      Checkout
+        run: |
+          pwd
+          ls -a
+          
